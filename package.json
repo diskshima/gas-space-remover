@@ -1,29 +1,29 @@
 {
-  "name": "gas-clasp-starter",
-  "version": "1.2.1",
-  "description": "",
+  "name": "gas-space-remover",
+  "version": "1.0.0",
+  "description": "Google App Script to remove whitespaces from Google Spreadsheets.",
   "main": "index.js",
   "scripts": {
     "lint": "tslint --fix src/**/*.ts",
     "test": "jest",
-    "build": "npm run lint && npm run test && rimraf dist && webpack && cpx src/appsscript.json dist",
+    "build": "npm run lint && rimraf dist && webpack && cpx src/appsscript.json dist",
     "deploy": "npm run build && clasp push"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/howdy39/gas-clasp-starter.git"
+    "url": "git+https://github.com/diskshima/gas-space-remover"
   },
   "keywords": [
     "gas",
     "google-apps-script",
     "clasp"
   ],
-  "author": "howdy39",
+  "author": "diskshima",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/howdy39/gas-clasp-starter/issues"
+    "url": "https://github.com/diskshima/gas-space-remover/issues"
   },
-  "homepage": "https://github.com/howdy39/gas-clasp-starter#readme",
+  "homepage": "https://github.com/diskshima/gas-space-remover",
   "devDependencies": {
     "@types/google-apps-script": "0.0.32",
     "@types/jest": "^23.3.10",

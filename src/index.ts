@@ -1,5 +1,3 @@
-import { SheetService } from './sheet.service';
-
 declare var global: any;
 
 global.onOpen = (): void => {
