@@ -1,27 +1,24 @@
+import { Remover } from './remover';
+
 declare var global: any;
 
 global.onOpen = (): void => {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Space Remover')
     .addItem('半角スペース除去', 'removeWhitespace')
+    .addItem('改行除去', 'removeNewline')
+    .addItem('半角スペースと改行除去', 'removeWhitespaceAndNewline')
     .addToUi();
 };
 
 global.removeWhitespace = (): void => {
-  const activeSheet = SpreadsheetApp.getActiveSheet();
-  const selection = activeSheet.getSelection();
+  Remover.removeWhitespace();
+};
 
-  const ranges = selection.getActiveRangeList().getRanges();
+global.removeNewline = (): void => {
+  Remover.removeNewline();
+};
 
-  const spaceRegex = / /g;
-
-  ranges.forEach(range => {
-    const values = range.getValues();
-    values.forEach(row => {
-      for (let i = 0; i < row.length; i++) {
-        row[i] = row[i].toString().replace(spaceRegex, '');
-      }
-    });
-    range.setValues(values);
-  });
+global.removeWhitespaceAndNewline = (): void => {
+  Remover.removeWhitespaceAndNewline();
 };
