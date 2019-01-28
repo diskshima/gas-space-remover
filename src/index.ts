@@ -12,13 +12,13 @@ global.onOpen = (): void => {
 };
 
 global.removeWhitespace = (): void => {
-  Remover.removeWhitespace();
+  Remover.genRegexReplacer(/ /g)();
 };
 
 global.removeNewline = (): void => {
-  Remover.removeNewline();
+  Remover.genRegexReplacer(/\n/g)();
 };
 
 global.removeWhitespaceAndNewline = (): void => {
-  Remover.removeWhitespaceAndNewline();
+  Remover.genRegexReplacer(/[ \n]/g)();
 };

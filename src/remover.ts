@@ -1,17 +1,9 @@
 export class Remover {
-  static removeWhitespace = (): void => {
-    Remover.removeRegex(/ /g);
+  static genRegexReplacer = (regex): (() => void) => {
+    return () => Remover.cellIterator(str => str.toString().replace(regex, ''));
   };
 
-  static removeNewline = (): void => {
-    Remover.removeRegex(/\n/g);
-  };
-
-  static removeWhitespaceAndNewline = (): void => {
-    Remover.removeRegex(/[ \n]/g);
-  };
-
-  private static removeRegex = regex => {
+  private static cellIterator = replacer => {
     const activeSheet = SpreadsheetApp.getActiveSheet();
     const selection = activeSheet.getSelection();
 
@@ -21,7 +13,7 @@ export class Remover {
       const values = range.getValues();
       values.forEach(row => {
         for (let i = 0; i < row.length; i++) {
-          row[i] = row[i].toString().replace(regex, '');
+          row[i] = replacer(row[i]);
         }
       });
       range.setValues(values);
