@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "ignoreDeprecations": "6.0",
+    "types": ["google-apps-script"],
     "sourceMap": true,
     "target": "es5",
     "module": "es2015"

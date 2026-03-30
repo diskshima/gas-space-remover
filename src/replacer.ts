@@ -2,7 +2,7 @@ import { cellIterator } from './cell_iterator';
 
 export class Replacer {
   static replaceSoundMark = () => {
-    cellIterator(str => {
+    cellIterator((str) => {
       let result = '';
       const dakuKeys = Object.keys(Replacer.dakuMapping);
       const handakuKeys = Object.keys(Replacer.handakuMapping);
@@ -73,7 +73,7 @@ export class Replacer {
     ヒ: 'ビ',
     フ: 'ブ',
     ヘ: 'ベ',
-    ホ: 'ボ'
+    ホ: 'ボ',
   };
 
   private static handakuMapping = {
@@ -86,6 +86,6 @@ export class Replacer {
     ヒ: 'ピ',
     フ: 'プ',
     ヘ: 'ペ',
-    ホ: 'ポ'
+    ホ: 'ポ',
   };
 }
